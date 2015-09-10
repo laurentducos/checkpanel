@@ -6,6 +6,11 @@ mkdir logs
 fi
 
 # Start checks
+
+function tester {
+echo "$(date +%s);$(hostname);test;42;test;ko" >> logs/$(hostname)_test.dat
+}
+
 function loadavg {
 status=ok
 warning=3

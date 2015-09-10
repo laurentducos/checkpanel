@@ -7,6 +7,7 @@ lang=fr
 source functions.sh
 loadavg
 memory
+tester
 ###########################################
 ###########################################
 # Output
@@ -22,7 +23,7 @@ echo "<tr>
 </tr>">>webdatas/index.html
 for i in $(ls logs)
 do 
-tail -n 1 $PWD/logs/$i|awk -F ";" '{print "<tr><td>"$2"</td><td>"$3"</td><td>"$4"</td><td>"$5"</td></tr>";fflush(stdout)}'>>webdatas/index.html
+tail -n 1 $PWD/logs/$i|awk -F ";" '{ if ($6=="ok") color="green" ; else if ($6=="ko") color="red" ; print color "<tr ><td>"$2"</td><td bgcolor="color">"$3"</td><td>"$4"</td><td>"$5"</td></tr>";fflush(stdout)}'>>webdatas/index.html
 done
 echo "</table>">>webdatas/index.html
 
