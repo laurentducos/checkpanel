@@ -4,6 +4,7 @@ function headers {
 echo "<!doctype html>
 <html lang=\"$1\">
 <head>
+  <meta http-equiv="refresh" content="60">
   <meta charset=\"utf-8\">
   <title>Little Checker</title>
   <link rel=\"stylesheet\" href=\"style.css\">
