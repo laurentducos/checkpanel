@@ -6,12 +6,19 @@ echo "<!doctype html>
 <head>
   <meta http-equiv="refresh" content="60">
   <meta charset=\"utf-8\">
-  <title>Little Checker</title>
+  <title>Tiny Pannel</title>
   <link rel=\"stylesheet\" href=\"style.css\">
   <script src=\"script.js\"></script>
 </head>
 <body>
-<h1>Console</h1>
+<h1>Tiny Pannel</h1>
+<p>
+<ul>
+<li>green=ok</li>
+<li>orange=warning</li>
+<li>red=critical</li>
+</ul>
+</p>
 "
 }
 
