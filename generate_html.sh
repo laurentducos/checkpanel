@@ -4,7 +4,7 @@ function headers {
 echo "<!doctype html>
 <html lang=\"$1\">
 <head>
-  <meta http-equiv="refresh" content="60">
+  <meta http-equiv="refresh" content="20">
   <meta charset=\"utf-8\">
   <title>Tiny Pannel</title>
   <link rel=\"stylesheet\" href=\"style.css\">
