@@ -14,7 +14,8 @@ source $kppath/functions.sh
 loadavg 
 memory
 tester
-bandwith tun1
+bandwith tun0
+bandwith wlan0
 
 ###########################################
 ###########################################
@@ -36,3 +37,20 @@ echo "</table>">>$kppath/webdatas/index.html
 
 footer >> $kppath/webdatas/index.html
 
+echo '<html>
+<head>
+<script type="text/javascript"
+  src="dygraph-combined-dev.js"></script>
+</head>
+<body>
+<div id="graphdiv2"
+  style="width:500px; height:300px;"></div>
+<script type="text/javascript">
+  g2 = new Dygraph(
+    document.getElementById("graphdiv2"),
+    "loadavg.csv", // path to CSV file
+    {}          // options
+  );
+</script>
+</body>
+</html>'

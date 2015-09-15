@@ -57,5 +57,15 @@ x=$(cat /sys/class/net/$1/statistics/tx_bytes)
 sleep 1
 y=$(cat /sys/class/net/$1/statistics/tx_bytes)
 txbps="$(((y-x)/1))"
+
 echo "$(date +%s);$(hostname);$1 bandwith down:up;$rxbps:$txbps;bps;$status" >> $kppath/logs/$(hostname)_$1bps.dat
+}
+
+function iostat {
+status=ok
+warning=
+critical=
+
+x=$(cat /sys/block/sda/stat)
+#https://www.kernel.org/doc/Documentation/block/stat.txt
 }
