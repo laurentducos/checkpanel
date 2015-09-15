@@ -4,10 +4,22 @@
 kppath="/home/lducos/koha_pannel"
 lang="fr"
 
+if [[ ! -d $kppath/var/run ]]
+then
+mkdir -p $kppath/var/run
+fi
+
 if [[ ! -d $kppath/logs/ ]]
 then
 mkdir $kppath/logs
 fi
+
+if [[ -f $kppath/var/run/kp.pid ]]
+then
+exit
+fi
+
+touch $kppath/var/run/kp.pid
 
 # Set test to run
 source $kppath/functions.sh
@@ -37,20 +49,21 @@ echo "</table>">>$kppath/webdatas/index.html
 
 footer >> $kppath/webdatas/index.html
 
-echo '<html>
-<head>
-<script type="text/javascript"
-  src="dygraph-combined-dev.js"></script>
-</head>
-<body>
-<div id="graphdiv2"
-  style="width:500px; height:300px;"></div>
-<script type="text/javascript">
-  g2 = new Dygraph(
-    document.getElementById("graphdiv2"),
-    "loadavg.csv", // path to CSV file
-    {}          // options
-  );
-</script>
-</body>
-</html>'
+#echo '<html>
+#<head>
+#<script type="text/javascript"
+#  src="dygraph-combined-dev.js"></script>
+#</head>
+#<body>
+#<div id="graphdiv2"
+#  style="width:500px; height:300px;"></div>
+#<script type="text/javascript">
+#  g2 = new Dygraph(
+#    document.getElementById("graphdiv2"),
+#    "loadavg.csv", // path to CSV file
+#    {}          // options
+#  );
+#</script>
+#</body>
+#</html>'
+rm $kppath/var/run/kp.pid
