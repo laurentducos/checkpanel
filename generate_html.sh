@@ -13,11 +13,13 @@ echo "<!doctype html>
 <body>
 <h1>Tiny Pannel</h1>
 <p>
+<!--
 <ul>
 <li>green=ok</li>
 <li>orange=warning</li>
 <li>red=critical</li>
 </ul>
+-->
 </p>
 "
 }
